@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="nuevoForm">
+            <br></br><br></br>
+            <p:panel header="DIOS PODEROSO"  style="width: 400px">
+                <p:panelGrid columns="2">
+                    <h:outputText  value="NOMBRE"></h:outputText>
+                    <p:inputText id="nombre" value="#{alumnoDTO.nombre}" />
+
+                    <h:outputText  value="APELLIDO"></h:outputText>
+                    <p:inputText id="apellido" value="#{alumnoDTO.apellido}" />
+
+                </p:panelGrid>
+                <Center>
+                    <p:panelGrid columns="1" >
+                        <p:commandButton  action="#{alumnoDTO.nuevoAl(alumnoDTO.nombre,alumnoDTO.apellido)}" 
+                                          value="Nuevo" update="nuevoForm" ajax="true"/>
+                    </p:panelGrid>
+                </Center>
+
+
+            </p:panel>
+
+        </h:form>
+
+
+    </h:body>
+</html>
+
